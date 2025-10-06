@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>SmartSafetyStore Admin</title></head>
+<body>
+  <h1>SmartSafetyStore - Admin (Demo)</h1>
+  <p>Simple admin dashboard placeholder.</p>
+  <div id="alerts"></div>
+  <script>
+    fetch('/api/products').then(r=>r.json()).then(data=>{
+      document.getElementById('alerts').innerHTML = '<h3>Products (sample)</h3><ul>' + data.map(p=>'<li>'+p.name+' - '+p.price+' SAR</li>').join('') + '</ul>';
+    });
+  </script>
+</body>
+</html>
